@@ -1,24 +1,16 @@
-package Calculadora;
+package calculadora;
 
-public class TesteCalculadora{
+public class TesteCalculadora {
+
     public static void main(String[] args) {
         Calculadora calc = new Calculadora();
-        
-        System.out.println(calc.calcular( 2,  3,  "*"));
-        System.out.println(calc.calcular( 10,  4,  "-"));
-        System.out.println(calc.calcular( 3,  5,  "*"));
-        System.out.println(calc.calcular( 8,  2,  "/"));
-        
-        try {
-            System.out.println(calc.calcular( 8,  0,  "/"));
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-        }
-        
-        try {
-            System.out.println(calc.calcular( 5,  5, "x"));
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-        }
+
+        // Testes rápidos
+        calc.calc(a: 2, b: 3, op: "+");    // esperado: 5
+        calc.calc(a: 10, b: 4, op: "-");   // esperado: 6
+        calc.calc(a: 3, b: 5, op: "*");    // esperado: 15
+        calc.calc(a: 8, b: 2, op: "/");    // esperado: 4
+        calc.calc(a: 7, b: 0, op: "/");    // divisao por zero
+        calc.calc(a: 5, b: 5, op: "x");    // operação inválida
     }
 }
